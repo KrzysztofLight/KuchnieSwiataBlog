@@ -1,11 +1,9 @@
-# Blog "Kuchnie Świata
+# Blog "Kuchnie Świata"
 
 This is school project: blog website, about food around the world
 
-## Available Scripts
-
+## How to run
 In the project directory, you can run:
-
 ```
 npm i 
 npm start
