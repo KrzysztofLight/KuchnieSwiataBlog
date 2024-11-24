@@ -22,3 +22,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 * [React.js](https://react.dev/)
 * [Flowbite-React](https://flowbite-react.com/)
 * [Tailwind](https://tailwindcss.com/)
+* [React Query](https://tanstack.com/query/v5/docs/framework/react/overview)
