@@ -11,11 +11,13 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<MainSite />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+        <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<MainSite />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
       </Router>
     </QueryClientProvider>
   );
