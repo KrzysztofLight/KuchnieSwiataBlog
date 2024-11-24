@@ -6,7 +6,6 @@ In the project directory, you can run:
 
 1. in first terminal window
 ```
-in one terminal window:
 npm i
 node server.js
 ```
