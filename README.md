@@ -18,7 +18,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Used technologies:
-* [Node.js](https://nodejs.org/en)
+* [Node.js](https://nodejs.org/en){:target="_blank"}
 * [React.js](https://react.dev/)
 * [Flowbite-React](https://flowbite-react.com/)
 * [Tailwind](https://tailwindcss.com/)
