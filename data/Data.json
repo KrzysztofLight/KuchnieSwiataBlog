@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "password": "123456",
+      "isAdmin": true
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@gmail.com",
+      "password": "654321",
+      "isAdmin": false
+    },
+    {
+      "id": 3,
+      "name": "skibidi",
+      "email": "skibidi.toilet@gmail.com",
+      "password": "$2b$10$mx/o6xYnCuYC8I10GVr4SeEUbxO.8RqDsyYlTeJIQBGc0FGtzKEMW",
+      "isAdmin": false
+    }
+  ]
+}
