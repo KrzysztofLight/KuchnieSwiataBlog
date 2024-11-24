@@ -3,13 +3,13 @@ import { Card, Carousel } from 'flowbite-react';
 
 export default function MainSite() {
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex justify-between items-center p-4 bg-gray-100 w-3/4 max-w-screen-lg">
+    <div className="hidden md:flex flex-col items-center min-w-[768px]">
+      <div className="flex justify-between items-center p-4 bg-gray-800 w-4/5">
         <div className="flex items-center">
-          <img src="path/to/logo.png" alt="Site Logo" className="h-10 mr-2" />
-          <span className="text-xl font-semibold">Kuchnie Świata</span>
+          <img src="/Images/Logo.png" alt="Site Logo" className="h-10 mr-2" />
+          <span className="text-xl font-semibold text-white">Kuchnie Świata</span>
         </div>
-        <div className="flex-grow mx-4">
+        <div className="mx-4 w-1/3">
           <input
             type="text"
             placeholder="Search..."
