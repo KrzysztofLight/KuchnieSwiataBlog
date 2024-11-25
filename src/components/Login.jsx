@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { Link, useNavigate } from 'react-router-dom';
 
 async function loginUser(credentials) {
     try {
@@ -33,7 +33,9 @@ async function loginUser(credentials) {
   export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
+  
     const mutation = useMutation({
       mutationFn: loginUser,
       onSuccess: (data) => {
@@ -41,6 +43,8 @@ async function loginUser(credentials) {
         localStorage.setItem('user', JSON.stringify(data));
         setEmail('');
         setPassword('');
+        queryClient.invalidateQueries('user'); // Example of using queryClient
+        navigate('/');
       },
       onError: (error) => {
         alert(error.message);
@@ -76,10 +80,10 @@ async function loginUser(credentials) {
               required
             />
           </div>
-            <div className="mt-4 mb-4 text-center">
-                <span className="text-blue-800 dark:text-blue-100">Don't have account? </span>
-                <Link to="/register" className="text-red-400 dark:text-red-600">Register</Link>
-            </div>
+          <div className="mt-4 mb-4 text-center">
+            <span className="text-blue-800 dark:text-blue-100">Don't have an account? </span>
+            <Link to="/register" className="text-red-400 dark:text-red-600">Register</Link>
+          </div>
           <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Login</button>
         </form>
       </div>

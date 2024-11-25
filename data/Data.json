@@ -48,6 +48,13 @@
       "email": "eeee@eeeee",
       "password": "$2b$10$ufpQIfBRjFs5Mmn4p.T7yu.hP1qMXu9msdplZsOu8EOWos2IuYo6i",
       "isAdmin": false
+    },
+    {
+      "id": 8,
+      "name": "sssss",
+      "email": "ssss@sssss",
+      "password": "$2b$10$UmNyy4x.at0M0eWBISEgNOxea8WUTsMM1IBulvhDm9zCnP5Ydjw9O",
+      "isAdmin": false
     }
   ]
 }

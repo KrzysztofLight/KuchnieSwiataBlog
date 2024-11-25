@@ -24,7 +24,6 @@ function useThemeMode() {
 }
 
 export default function MainSite() {
-  const navigate = useNavigate();
   const theme = useThemeMode();
   const [logo, setLogo] = useState('/Images/LogoLight.png');
 

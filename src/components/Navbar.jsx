@@ -3,44 +3,31 @@ import { Link } from 'react-router-dom';
 import { Navbar, Avatar, Dropdown } from 'flowbite-react';
 import { DarkThemeToggle } from 'flowbite-react';
 import { useQueryClient } from '@tanstack/react-query';
-
-
 function useThemeMode() {
-  
   const [theme, setTheme] = useState('light');
-
   useEffect(() => {
     const updateTheme = () => {
       const isDarkMode = document.documentElement.classList.contains('dark');
       setTheme(isDarkMode ? 'light' : 'dark');
     };
-
     updateTheme();
-
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
     return () => {
       observer.disconnect();
     };
   }, []);
-
   return theme;
 }
-
 const NavigationBar = () => {
   const theme = useThemeMode();
   const [logo, setLogo] = useState('/Images/LogoLight.png');
-
   const queryClient = useQueryClient();
-  const user = queryClient.getQueryData('user'); // Get the user from the query cache
+  const user = queryClient.getQueryData('user'); 
 
   useEffect(() => {
     setLogo(theme === 'dark' ? '/Images/LogoDark.png' : '/Images/LogoLight.png');
   }, [theme]);
-
-  
-
   return (
     <>
       <Navbar fluid className='bg-slate-300 mb-1'>
