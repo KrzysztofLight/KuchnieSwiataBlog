@@ -24,6 +24,10 @@ async function hashPassword(password) {
   return await bcrypt.hash(password, saltRounds);
 }
 
+async function comparePassword(password, hashedPassword) {
+  return await bcrypt.compare(password, hashedPassword);
+}
+
 app.post('/api/register', async (req, res) => {
   const { name, email, password } = req.body;
   let users = readUsers();
@@ -39,6 +43,26 @@ app.post('/api/register', async (req, res) => {
   users.push(newUser);
   writeUsers(users);
   res.status(201).json({ message: 'User registered successfully!' });
+});
+
+app.post('/api/login', async (req, res) => {
+  const { email, password } = req.body;
+  const users = readUsers();
+  const user = users.find(u => u.email === email);
+
+  if (!user) {
+    console.log(`User with email ${email} not found`);
+    return res.status(401).json({ message: 'Invalid email or password' });
+  }
+
+  const isPasswordValid = await comparePassword(password, user.password);
+  if (!isPasswordValid) {
+    console.log(`Invalid password for user with email ${email}`);
+    return res.status(401).json({ message: 'Invalid email or password' });
+  }
+
+  console.log(`User with email ${email} logged in successfully`);
+  res.json({ message: 'Login successful', user });
 });
 
 const PORT = process.env.PORT || 8000;

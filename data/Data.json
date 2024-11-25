@@ -20,6 +20,34 @@
       "email": "skibidi.toilet@gmail.com",
       "password": "$2b$10$mx/o6xYnCuYC8I10GVr4SeEUbxO.8RqDsyYlTeJIQBGc0FGtzKEMW",
       "isAdmin": false
+    },
+    {
+      "id": 4,
+      "name": "test",
+      "email": "test.test@gmail.test",
+      "password": "$2b$10$5KjRNVI0YeKvLZOJj2/hj.v4XVwj4mUGYIdjz0rU37qq4c68MKQd6",
+      "isAdmin": false
+    },
+    {
+      "id": 5,
+      "name": "Skibidi Toielt",
+      "email": "test.test@tsss",
+      "password": "$2b$10$p09wb4pOD6GfAXaQ6Ce/7e98ZElJXxYmLkJUJ/UJJR.nRF14pN2Ce",
+      "isAdmin": false
+    },
+    {
+      "id": 6,
+      "name": "ssssss",
+      "email": "ssss@sssss",
+      "password": "$2b$10$27ecL202ZaRDWnNApppnK.lNCzagE6CJ6oUz1VPwSiriwE1imuQoe",
+      "isAdmin": false
+    },
+    {
+      "id": 7,
+      "name": "eeeeeeeee",
+      "email": "eeee@eeeee",
+      "password": "$2b$10$ufpQIfBRjFs5Mmn4p.T7yu.hP1qMXu9msdplZsOu8EOWos2IuYo6i",
+      "isAdmin": false
     }
   ]
 }

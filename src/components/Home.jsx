@@ -32,10 +32,6 @@ export default function MainSite() {
     setLogo(theme === 'dark' ? '/Images/LogoDark.png' : '/Images/LogoLight.png');
   }, [theme]);
 
-  const handleRegisterClick = () => {
-    navigate('/register');
-  };
-
   return (
     <div className="hidden md:flex flex-col items-center min-w-[768px] bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
       <div className="flex justify-between items-center p-1 w-4/5 bg-gray-100 dark:bg-gray-900">
@@ -54,13 +50,6 @@ export default function MainSite() {
           />
         </div>
         <div className="flex items-center space-x-4">
-          <button className="px-4 py-2 bg-blue-500 text-white rounded dark:bg-blue-700">Login</button>
-          <button
-            className="px-4 py-2 bg-green-500 text-white rounded dark:bg-green-700"
-            onClick={handleRegisterClick}
-          >
-            Register
-          </button>
         </div>
       </div>
     </div>
