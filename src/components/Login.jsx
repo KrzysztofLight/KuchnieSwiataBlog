@@ -85,7 +85,7 @@ export default function Login() {
           <span className="text-blue-800 dark:text-blue-100">Don't have an account? </span>
           <Link to="/register" className="text-red-400 dark:text-red-600">Register</Link>
         </div>
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Login</button>
+        <button type="submit" className="w-full bg-blue-500 dark:bg-blue-900 text-white p-2 rounded">Login</button>
       </form>
     </div>
   );

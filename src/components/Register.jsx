@@ -84,7 +84,7 @@ export default function Register() {
             <span className="text-blue-800 dark:text-blue-100">Already have an account? </span>
             <Link to="/login" className="text-red-400 dark:text-red-600">Login</Link>
         </div>
-        <button type="submit" className="w-full bg-blue-900 dark:bg-blue-900 text-white p-2 rounded">
+        <button type="submit" className="w-full bg-blue-500 dark:bg-blue-900 text-white p-2 rounded">
           Register
         </button>
       </form>

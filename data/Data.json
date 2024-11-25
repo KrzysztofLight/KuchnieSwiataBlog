@@ -55,6 +55,13 @@
       "email": "ssss@sssss",
       "password": "$2b$10$UmNyy4x.at0M0eWBISEgNOxea8WUTsMM1IBulvhDm9zCnP5Ydjw9O",
       "isAdmin": false
+    },
+    {
+      "id": 9,
+      "name": "ppppp",
+      "email": "ppppp@ppppp",
+      "password": "$2b$10$Zd56MymYtcBiudU5cuEWR.jifWe248VLSN18YxidGp4Deg2gPKw8K",
+      "isAdmin": false
     }
   ]
 }

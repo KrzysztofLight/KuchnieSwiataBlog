@@ -43,7 +43,7 @@ const NavigationBar = () => {
             arrowIcon={false}
             inline
             label={
-              <Avatar icon="" alt="avatar of Jese" rounded />
+              <Avatar icon="" alt="avatar" className='' rounded />
             }
           >
             <Dropdown.Header>
