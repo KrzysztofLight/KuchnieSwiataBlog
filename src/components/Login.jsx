@@ -42,7 +42,7 @@ export default function Login() {
     mutationFn: loginUser,
     onSuccess: (data) => {
       alert('User logged in successfully!');
-      login(data);
+      login(data.user);
       setEmail('');
       setPassword('');
       navigate('/');
