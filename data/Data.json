@@ -62,6 +62,13 @@
       "email": "ppppp@ppppp",
       "password": "$2b$10$Zd56MymYtcBiudU5cuEWR.jifWe248VLSN18YxidGp4Deg2gPKw8K",
       "isAdmin": false
+    },
+    {
+      "id": 10,
+      "name": "administrator",
+      "email": "admin@admin.com",
+      "password": "$2b$10$7ZAmgU/gx5AnWhf83R1tIe9woeb.a88WH4fWpSxGMt3YDABkTo0yu",
+      "isAdmin": true
     }
   ]
 }

@@ -86,7 +86,13 @@ export default function Login() {
           <Link to="/register" className="text-red-400 dark:text-red-600">Register</Link>
         </div>
         <button type="submit" className="w-full bg-blue-500 dark:bg-blue-900 text-white p-2 rounded">Login</button>
+        <div className='text-center mt-4'>
+          <p className='text-gray-300 dark:text-gray-500'>Aby przetestować aplikacje jako admin:</p>
+          <p className='text-gray-300 dark:text-gray-500'>email: admin@admin.com</p>
+          <p className='text-gray-300 dark:text-gray-500'>hasło: administrator</p>
+        </div>
       </form>
     </div>
+    
   );
 }
