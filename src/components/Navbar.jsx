@@ -57,7 +57,7 @@ const NavigationBar = () => {
                 <div>Placeholder Name | Placeholder Email</div>
               )}
             </Dropdown.Header>
-            {user.isAdmin && <Dropdown.Item>Skibidi</Dropdown.Item>}
+            {user && user.isAdmin && <Dropdown.Item>Skibidi</Dropdown.Item>}
             <Dropdown.Item>Dashboard</Dropdown.Item>
             <Dropdown.Item>Settings</Dropdown.Item>
             <Dropdown.Item>Earnings</Dropdown.Item>

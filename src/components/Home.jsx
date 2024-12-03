@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-
+import { Carousel } from 'flowbite-react';
 
 function useThemeMode() {
   const [theme, setTheme] = useState('light');
@@ -64,6 +64,12 @@ export default function MainSite() {
             </a>
           </div>
         </div>
+      </div>
+      <div className='h-56 sm:h-64 xl:h-80 2xl:h-96 w-full'>
+        <Carousel>
+          <img src={logo} alt="Carousel 1" className="w-full" />
+          <img src={logo} alt="Carousel 2" className="w-full" />
+        </Carousel>
       </div>
     </div>
   );
