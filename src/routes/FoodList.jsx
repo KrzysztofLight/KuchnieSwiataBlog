@@ -6,7 +6,7 @@ const FoodList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/food') // Ensure the URL matches your server's URL
+    fetch('http://localhost:8000/api/food') // Ensure the URL matches your server's URL
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

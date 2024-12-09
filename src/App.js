@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import MainSite from './components/Home';
-import Register from './components/Register';
-import Login from './components/Login';
-import Navbar from './components/Navbar';
-import FoodList from './components/FoodList';
+import MainSite from './routes/Home';
+import Register from './routes/Register';
+import Login from './routes/Login';
+import Navbar from './routes/Navbar';
+import FoodList from './routes/FoodList';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,7 @@ function App() {
             </Routes>
           </div>
         </Router>
+        <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
