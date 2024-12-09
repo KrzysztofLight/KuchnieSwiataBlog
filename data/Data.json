@@ -70,5 +70,21 @@
       "password": "$2b$10$7ZAmgU/gx5AnWhf83R1tIe9woeb.a88WH4fWpSxGMt3YDABkTo0yu",
       "isAdmin": true
     }
+  ],
+  "food": [
+    {
+      "photo": "path/to/photo1.jpg",
+      "name": "Food Name 1",
+      "description": "Delicious food description 1.",
+      "ingredients": ["ingredient1", "ingredient2", "ingredient3"],
+      "method": "Method of preparation 1."
+    },
+    {
+      "photo": "path/to/photo2.jpg",
+      "name": "Food Name 2",
+      "description": "Delicious food description 2.",
+      "ingredients": ["ingredient4", "ingredient5", "ingredient6"],
+      "method": "Method of preparation 2."
+    }
   ]
 }

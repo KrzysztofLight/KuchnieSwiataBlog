@@ -37,6 +37,7 @@ const NavigationBar = () => {
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="Site Logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white" as={Link} to="/">Strona Główna</span>
         </Navbar.Brand>
+        <Link to="/food"><h3>Food</h3></Link>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Dropdown
