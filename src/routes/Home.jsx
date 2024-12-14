@@ -41,13 +41,12 @@ export default function MainSite() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/food') // Ensure the URL matches your server's URL
+    fetch('http://localhost:8000/api/food')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.json();
-        console.log("Skkibidi")
       })
       .then(data => {
         setFoodData(data);
@@ -97,7 +96,7 @@ export default function MainSite() {
           <img src={logo} alt="Carousel 2" className="w-full" />
         </Carousel>
       </div>
-      <div className='pt-5'>
+      <div className='pt-8'>
         {
         /* POPRAW SE ŻEBY KARTY BYŁY NA KATEGORIE (NIE BAW SIE W FOODDATA.MAP)
         foodData.map((food, index) => (
