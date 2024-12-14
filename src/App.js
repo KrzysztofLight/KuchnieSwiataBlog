@@ -7,7 +7,7 @@ import Login from './routes/Login';
 import Navbar from './routes/Navbar';
 import FoodList from './routes/FoodList';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-
+import Food from './routes/Food';
 
 const queryClient = new QueryClient();
 
@@ -22,6 +22,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/food" element={<FoodList />} />
+              <Route path="/food/:name" element={<Food />} />
             </Routes>
           </div>
         </Router>

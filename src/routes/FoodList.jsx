@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Button, Card } from "flowbite-react";
+import { Link } from 'react-router-dom';
 
 const FoodList = () => {
   const [foodData, setFoodData] = useState([]);
@@ -6,7 +8,7 @@ const FoodList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/food') // Ensure the URL matches your server's URL
+    fetch('http://localhost:8000/api/food')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -32,28 +34,28 @@ const FoodList = () => {
   }
 
   return (
-    <div className="flex flex-wrap justify-center">
-      {foodData.length > 0 ? (
-        foodData.map((food, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden m-4 p-4">
-            <img className="w-full h-48 object-cover" src={food.photo} alt={food.name} />
-            <div className="p-4">
-              <h2 className="text-xl font-bold mb-2">{food.name}</h2>
-              <p className="text-gray-700 mb-4">{food.description}</p>
-              <h3 className="text-lg font-semibold mb-2">Ingredients:</h3>
-              <ul className="list-disc list-inside mb-4">
-                {food.ingredients.map((ingredient, index) => (
-                  <li key={index}>{ingredient}</li>
-                ))}
-              </ul>
-              <h3 className="text-lg font-semibold mb-2">Method of Preparation:</h3>
-              <p className="text-gray-700">{food.method}</p>
-            </div>
+    <div className="flex justify-center items-center pt-8 h-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pt-8 w-4/5">
+      {foodData.map((food, index) => (
+        <Card key={index} className="w-full max-w-xs m-auto">
+          <div className="relative h-48 w-full">
+            <img 
+              src={food.photo || '/images/blog/image-1.jpg'} 
+              alt={food.category} 
+              className="absolute inset-0 h-full w-full object-cover rounded-t-lg"
+            />
           </div>
-        ))
-      ) : (
-        <p className="text-gray-700">No food items available.</p>
-      )}
+          <div className="p-4">
+            <h5 className="text-2xl font-bold tracking-tight justify-center text-gray-900 dark:text-white">
+              {food.name}
+            </h5>
+            <Button as={Link} to={`/food/${food.name}`} className='mt-3'>
+              Sprawdz
+            </Button>
+          </div>
+        </Card>
+      ))}
+    </div>
     </div>
   );
 };

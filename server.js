@@ -140,7 +140,6 @@ app.post('/api/login', async (req, res) => {
   res.status(200).json({ message: 'Login successful!' });
 });
 
-// New endpoint to get food data
 app.get('/api/food', (req, res) => {
   const dataFood = readData();
   res.json(dataFood.food);

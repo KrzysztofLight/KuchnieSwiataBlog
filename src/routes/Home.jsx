@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { Carousel } from 'flowbite-react';
+import { Button, Card } from "flowbite-react";
+import { Link } from 'react-router-dom';
 
 function useThemeMode() {
   const [theme, setTheme] = useState('light');
+
 
   useEffect(() => {
     const updateTheme = () => {
@@ -32,6 +35,29 @@ export default function MainSite() {
   useEffect(() => {
     setLogo(theme === 'dark' ? '/Images/LogoDark.png' : '/Images/LogoLight.png');
   }, [theme]);
+
+  const [foodData, setFoodData] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/api/food') // Ensure the URL matches your server's URL
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+        console.log("Skkibidi")
+      })
+      .then(data => {
+        setFoodData(data);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        setError(error);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <div className="md:flex flex-col items-center min-w-[768px] bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
@@ -70,6 +96,31 @@ export default function MainSite() {
           <img src={logo} alt="Carousel 1" className="w-full" />
           <img src={logo} alt="Carousel 2" className="w-full" />
         </Carousel>
+      </div>
+      <div className='pt-5'>
+        {
+        /* POPRAW SE ŻEBY KARTY BYŁY NA KATEGORIE (NIE BAW SIE W FOODDATA.MAP)
+        foodData.map((food, index) => (
+          <Card key={index} className="max-w-sm">
+            <img 
+              src={food.imgSrc || '/images/blog/image-1.jpg'} 
+              alt={food.category} 
+              className="h-48 w-full object-cover rounded-t-lg"
+            />
+            <div className="p-4">
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {food.category}
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                {food.description || 'Description not available.'}
+              </p>
+              <Button as={Link} to={`/food/${food.id}`}>
+                Sprawdz
+              </Button>
+            </div>
+          </Card>
+        ))
+          */}
       </div>
     </div>
   );

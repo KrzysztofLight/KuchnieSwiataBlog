@@ -35,9 +35,9 @@ const NavigationBar = () => {
       <Navbar fluid className='bg-slate-300 mb-1'>
         <Navbar.Brand as={Link} to="/">
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="Site Logo" />
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white" as={Link} to="/">Strona Główna</span>
+          <span className="text-gray-900 self-center whitespace-nowrap text-xl font-semibold dark:text-white" as={Link} to="/">Strona Główna</span>
         </Navbar.Brand>
-        <Link to="/food"><h3>Food</h3></Link>
+        <Link to="/food" className='text-gray-900 self-center font-semibold dark:text-white'>Jedzenie</Link>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Dropdown
