@@ -70,7 +70,13 @@ app.post('/api/login', async (req, res) => {
   res.status(200).json({ message: 'Login successful', user });
 });
 
-const PORT = process.env.PORT || 5000;
+app.get('/api/food', (req, res) => {
+  const dataFood = readData();
+  res.json(dataFood.food);
+  console.log('Food data sent successfully');
+});
+
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
