@@ -58,6 +58,8 @@ export default function MainSite() {
       });
   }, []);
 
+  const categories = [...new Set(foodData.map(food => food.category))];
+
   return (
     <div className="md:flex flex-col items-center min-w-[768px] bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
       <div className="flex justify-between items-center p-1 w-3/4 bg-gray-100 dark:bg-gray-900">
@@ -96,30 +98,30 @@ export default function MainSite() {
           <img src={logo} alt="Carousel 2" className="w-full" />
         </Carousel>
       </div>
-      <div className='pt-8'>
-        {
-        /* POPRAW SE ŻEBY KARTY BYŁY NA KATEGORIE (NIE BAW SIE W FOODDATA.MAP)
-        foodData.map((food, index) => (
-          <Card key={index} className="max-w-sm">
-            <img 
-              src={food.imgSrc || '/images/blog/image-1.jpg'} 
-              alt={food.category} 
-              className="h-48 w-full object-cover rounded-t-lg"
-            />
-            <div className="p-4">
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {food.category}
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                {food.description || 'Description not available.'}
-              </p>
-              <Button as={Link} to={`/food/${food.id}`}>
-                Sprawdz
-              </Button>
-            </div>
-          </Card>
-        ))
-          */}
+      <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
+        <h1 className="text-3xl font-bold text-center col-span-full">Kategorie jedzenia</h1>
+        <p className="text-lg text-center col-span-full mb-8">Odkryj różnorodne, pyszne przepisy podzielone na kategorie dla Twojej wygody. Kliknij na dowolną kategorię, aby dowiedzieć się więcej!</p>
+        {categories.map((category, index) => {
+          const categoryFoods = foodData.filter(food => food.category === category);
+          const randomFood = categoryFoods[Math.floor(Math.random() * categoryFoods.length)];
+          return (
+            <Card key={index} className="max-w-sm">
+              <img 
+                src={randomFood.photo  || '/images/blog/image-1.jpg'} 
+                alt={category} 
+                className="h-48 w-full object-cover rounded-t-lg"
+              />
+              <div className="p-4">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {category}
+                </h5>
+                <Button as={Link} to={`/food/category/${category.toLowerCase()}`} className='mt-3'>
+                  Sprawdz
+                </Button>
+              </div>
+            </Card>
+          )
+        })}
       </div>
     </div>
   );
