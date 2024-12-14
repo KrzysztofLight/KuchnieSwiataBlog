@@ -69,6 +69,13 @@
       "email": "admin@admin.com",
       "password": "$2b$10$7ZAmgU/gx5AnWhf83R1tIe9woeb.a88WH4fWpSxGMt3YDABkTo0yu",
       "isAdmin": true
+    },
+    {
+      "id": 11,
+      "name": "eeeee",
+      "email": "eeeee@eeeee",
+      "password": "$2b$10$OwHVNsQG4HwgMsAKhgRmw.xgOvyCABddM...IiUy6ngq7satEvIEK",
+      "isAdmin": false
     }
   ],
   "food": [
@@ -77,124 +84,200 @@
       "photo": "http://localhost:3000/Images/FoodImages/BułkaMasło.png",
       "name": "Bułka z masłem",
       "description": "Delicious food description 1.",
-      "ingredients": ["ingredient1", "ingredient2", "ingredient3"],
+      "ingredients": [
+        "ingredient1",
+        "ingredient2",
+        "ingredient3"
+      ],
       "method": "Method of preparation 1.",
-      "category":"Śniadanie"
+      "category": "Śniadanie"
     },
     {
       "id": 2,
       "photo": "http://localhost:3000/Images/FoodImages/ChlebWedlina.png",
       "name": "Chleb z wędliną",
       "description": "Delicious food description 2.",
-      "ingredients": ["ingredient4", "ingredient5", "ingredient6"],
+      "ingredients": [
+        "ingredient4",
+        "ingredient5",
+        "ingredient6"
+      ],
       "method": "Method of preparation 2.",
-      "category": "Śniadanie" 
+      "category": "Śniadanie"
     },
     {
       "id": 3,
       "photo": "http://localhost:3000/Images/FoodImages/VifonCurry.png",
       "name": "Czajniz zupina",
       "description": "Delicious food description 2.",
-      "ingredients": ["ingredient4", "ingredient5", "ingredient6"],
+      "ingredients": [
+        "ingredient4",
+        "ingredient5",
+        "ingredient6"
+      ],
       "method": "Method of preparation 2.",
-      "category": "Obiad" 
+      "category": "Obiad"
     },
     {
       "id": 4,
       "photo": "http://localhost:3000/Images/FoodImages/fromage.png",
       "name": "Lays Fromage",
       "description": "Delicious food description 2.",
-      "ingredients": ["ingredient4", "ingredient5", "ingredient6"],
+      "ingredients": [
+        "ingredient4",
+        "ingredient5",
+        "ingredient6"
+      ],
       "method": "Method of preparation 2.",
-      "category": "Obiad" 
+      "category": "Obiad"
     },
     {
       "id": 5,
       "photo": "http://localhost:3000/Images/FoodImages/głodówka.png",
       "name": "Głodówka",
       "description": "Delicious food description 2.",
-      "ingredients": ["ingredient4", "ingredient5", "ingredient6"],
+      "ingredients": [
+        "ingredient4",
+        "ingredient5",
+        "ingredient6"
+      ],
       "method": "Method of preparation 2.",
-      "category": "Głodówka" 
+      "category": "Głodówka"
     },
     {
-      "id": 2,
+      "id": 6,
       "photo": "http://localhost:3000/Images/FoodImages/Pancakes.png",
       "name": "Naleśniki",
       "description": "Puszyste naleśniki podawane z syropem i masłem.",
-      "ingredients": ["Mąka", "Mleko", "Jajka", "Masło", "Syrop"],
+      "ingredients": [
+        "Mąka",
+        "Mleko",
+        "Jajka",
+        "Masło",
+        "Syrop"
+      ],
       "method": "Wymieszaj mąkę, mleko i jajka. Smaż na patelni z masłem. Podawaj z syropem.",
       "category": "Śniadanie"
     },
     {
-      "id": 3,
+      "id": 7,
       "photo": "http://localhost:3000/Images/FoodImages/Omelette.png",
       "name": "Omlet",
       "description": "Klasyczny omlet z serem i warzywami.",
-      "ingredients": ["Jajka", "Ser", "Warzywa", "Sól", "Pieprz"],
+      "ingredients": [
+        "Jajka",
+        "Ser",
+        "Warzywa",
+        "Sól",
+        "Pieprz"
+      ],
       "method": "Wymieszaj jajka, dodaj ser i warzywa. Smaż na patelni do złotego koloru.",
       "category": "Śniadanie"
     },
     {
-      "id": 4,
+      "id": 8,
       "photo": "http://localhost:3000/Images/FoodImages/GrilledChicken.png",
       "name": "Grillowany Kurczak",
       "description": "Soczysty grillowany kurczak podawany z warzywami.",
-      "ingredients": ["Kurczak", "Oliwa z oliwek", "Przyprawy", "Warzywa"],
+      "ingredients": [
+        "Kurczak",
+        "Oliwa z oliwek",
+        "Przyprawy",
+        "Warzywa"
+      ],
       "method": "Natrzyj kurczaka oliwą i przyprawami. Grilluj do miękkości. Podawaj z warzywami.",
       "category": "Obiad"
     },
     {
-      "id": 5,
+      "id": 9,
       "photo": "http://localhost:3000/Images/FoodImages/SpaghettiBolognese.png",
       "name": "Spaghetti Bolognese",
       "description": "Klasyczne spaghetti z bogatym sosem Bolognese.",
-      "ingredients": ["Makaron", "Mięso mielone", "Pomidory", "Cebula", "Czosnek", "Przyprawy"],
+      "ingredients": [
+        "Makaron",
+        "Mięso mielone",
+        "Pomidory",
+        "Cebula",
+        "Czosnek",
+        "Przyprawy"
+      ],
       "method": "Ugotuj makaron. Smaż mięso z cebulą i czosnkiem, dodaj pomidory i przyprawy. Podawaj z makaronem.",
       "category": "Obiad"
     },
     {
-      "id": 6,
+      "id": 10,
       "photo": "http://localhost:3000/Images/FoodImages/Salad.png",
       "name": "Sałatka",
       "description": "Świeża mieszana sałatka z różnorodnymi warzywami.",
-      "ingredients": ["Sałata", "Pomidor", "Ogórek", "Papryka", "Sos winegret"],
+      "ingredients": [
+        "Sałata",
+        "Pomidor",
+        "Ogórek",
+        "Papryka",
+        "Sos winegret"
+      ],
       "method": "Pokrój warzywa, wymieszaj z sałatą i sosem winegret.",
       "category": "Kolacja"
     },
     {
-      "id": 7,
+      "id": 11,
       "photo": "http://localhost:3000/Images/FoodImages/Steak.png",
       "name": "Stek",
       "description": "Grillowany stek podawany z puree ziemniaczanym.",
-      "ingredients": ["Stek", "Oliwa z oliwek", "Przyprawy", "Ziemniaki", "Masło"],
+      "ingredients": [
+        "Stek",
+        "Oliwa z oliwek",
+        "Przyprawy",
+        "Ziemniaki",
+        "Masło"
+      ],
       "method": "Natrzyj stek oliwą i przyprawami. Grilluj do pożądanego stopnia wysmażenia. Podawaj z puree ziemniaczanym.",
       "category": "Kolacja"
     },
     {
-      "id": 8,
+      "id": 12,
       "photo": "http://localhost:3000/Images/FoodImages/ChocolateCake.png",
       "name": "Ciasto Czekoladowe",
       "description": "Bogate i wilgotne ciasto czekoladowe.",
-      "ingredients": ["Mąka", "Cukier", "Kakao", "Jajka", "Masło", "Czekolada"],
+      "ingredients": [
+        "Mąka",
+        "Cukier",
+        "Kakao",
+        "Jajka",
+        "Masło",
+        "Czekolada"
+      ],
       "method": "Wymieszaj składniki, piecz w piekarniku przez 30 minut w 180°C.",
       "category": "Deser"
     },
     {
-      "id": 9,
+      "id": 13,
       "photo": "http://localhost:3000/Images/FoodImages/IceCream.png",
       "name": "Lody",
       "description": "Kremowe lody waniliowe z sosem czekoladowym.",
-      "ingredients": ["Mleko", "Śmietana", "Cukier", "Wanilia", "Sos czekoladowy"],
+      "ingredients": [
+        "Mleko",
+        "Śmietana",
+        "Cukier",
+        "Wanilia",
+        "Sos czekoladowy"
+      ],
       "method": "Wymieszaj mleko, śmietanę, cukier i wanilię. Zamroź. Podawaj z sosem czekoladowym.",
       "category": "Deser"
     },
     {
-      "id": 10,
+      "id": 14,
       "photo": "http://localhost:3000/Images/FoodImages/ApplePie.png",
       "name": "Szarlotka",
       "description": "Puszyste ciasto z jabłkami i cynamonem.",
-      "ingredients": ["Mąka", "Cukier", "Jajka", "Masło", "Jabłka", "Cynamon"],
+      "ingredients": [
+        "Mąka",
+        "Cukier",
+        "Jajka",
+        "Masło",
+        "Jabłka",
+        "Cynamon"
+      ],
       "method": "Wymieszaj składniki, dodaj jabłka i cynamon. Piecz w piekarniku przez 40 minut w 180°C.",
       "category": "Deser"
     }

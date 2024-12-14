@@ -1,4 +1,3 @@
-// src/components/Login.jsx
 import React, { useState, useContext } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
@@ -41,13 +40,19 @@ export default function Login() {
   const mutation = useMutation({
     mutationFn: loginUser,
     onSuccess: (data) => {
-      alert('User logged in successfully!');
-      login(data.user);
-      setEmail('');
-      setPassword('');
-      navigate('/');
+      console.log('Login successful:', data.user);
+      if (data.user) {
+        login(data.user);
+        setEmail('');
+        setPassword('');
+        navigate('/');
+      } else {
+        console.error('No user data in response:', data);
+        alert('Login failed: No user data in response.');
+      }
     },
     onError: (error) => {
+      console.error('Login error:', error);
       alert(error.message);
     },
   });
@@ -93,6 +98,5 @@ export default function Login() {
         </div>
       </form>
     </div>
-    
   );
 }

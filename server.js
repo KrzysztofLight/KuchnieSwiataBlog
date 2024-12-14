@@ -1,83 +1,8 @@
-/*
-
-const express = require('express');
-const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
-
-const app = express();
-app.use(express.json());
-app.use(cors());
-
-const usersFilePath = path.join(__dirname, 'data/Data.json');
-
-function readUsers() {
-  const data = fs.readFileSync(usersFilePath, 'utf8');
-  return JSON.parse(data).users;
-}
-
-function writeUsers(users) {
-  fs.writeFileSync(usersFilePath, JSON.stringify({ users }, null, 2));
-}
-
-async function hashPassword(password) {
-  const saltRounds = 10;
-  return await bcrypt.hash(password, saltRounds);
-}
-
-async function comparePassword(password, hashedPassword) {
-  return await bcrypt.compare(password, hashedPassword);
-}
-
-app.post('/api/register', async (req, res) => {
-  const { name, email, password } = req.body;
-  let users = readUsers();
-  const newId = users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 1;
-  const hashedPassword = await hashPassword(password);
-  const newUser = {
-    id: newId,
-    name,
-    email,
-    password: hashedPassword,
-    isAdmin: false
-  };
-  users.push(newUser);
-  writeUsers(users);
-  res.status(201).json({ message: 'User registered successfully!' });
-});
-
-app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body;
-  const users = readUsers();
-  const user = users.find(u => u.email === email);
-
-  if (!user) {
-    console.log(`User with email ${email} not found`);
-    return res.status(401).json({ message: 'Invalid email or password' });
-  }
-
-  const isPasswordValid = await comparePassword(password, user.password);
-  if (!isPasswordValid) {
-    console.log(`Invalid password for user with email ${email}`);
-    return res.status(401).json({ message: 'Invalid email or password' });
-  }
-
-  console.log(`User with email ${email} logged in successfully`);
-  res.json({ message: 'Login successful', user });
-});
-
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
-*/
-
-const express = require('express');
 const fs = require('fs');
-const path = require('path');
-const bcrypt = require('bcrypt');
-const cors = require('cors');
+const express = require('express');
 
 const app = express();
 app.use(express.json());
@@ -106,7 +31,7 @@ async function comparePassword(password, hashedPassword) {
 app.post('/api/register', async (req, res) => {
   const { name, email, password } = req.body;
   let data = readData();
-  const users = data.users;
+  const users = data.users; // Updated to match new structure
   const newId = users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 1;
   const hashedPassword = await hashPassword(password);
   const newUser = {
@@ -124,7 +49,11 @@ app.post('/api/register', async (req, res) => {
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
   const data = readData();
-  const users = data.users;
+  if (!data) {
+    return res.status(500).json({ message: 'Error reading data' });
+  }
+  console.log('Data read from file:', data);
+  const users = data.users; // Updated to match new structure
   const user = users.find(u => u.email === email);
 
   if (!user) {
@@ -133,20 +62,15 @@ app.post('/api/login', async (req, res) => {
   }
 
   const isPasswordValid = await comparePassword(password, user.password);
+
   if (!isPasswordValid) {
     return res.status(401).json({ message: 'Invalid email or password' });
   }
 
-  res.status(200).json({ message: 'Login successful!' });
+  res.status(200).json({ message: 'Login successful', user });
 });
 
-app.get('/api/food', (req, res) => {
-  const dataFood = readData();
-  res.json(dataFood.food);
-  console.log('Food data sent successfully');
-});
-
-const port = 8000;
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

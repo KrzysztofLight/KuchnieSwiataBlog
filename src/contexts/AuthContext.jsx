@@ -7,14 +7,21 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
-      console.log('User found in local storage');
-      console.log(storedUser);
-      console.log(JSON.parse(storedUser));
+      try {
+        const parsedUser = JSON.parse(storedUser);
+        setUser(parsedUser);
+        console.log('User found in local storage');
+        console.log(storedUser);
+        console.log(parsedUser);
+      } catch (error) {
+        console.error('Error parsing stored user:', error);
+      }
     }
   }, []);
 
   const login = (userData) => {
+    console.log('Login function called');
+    console.log('User data:', userData);
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
   };
