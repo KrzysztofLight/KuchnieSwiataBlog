@@ -98,19 +98,21 @@ export default function MainSite() {
           <img src={logo} alt="Carousel 2" className="w-full" />
         </Carousel>
       </div>
-      <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
+      <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-4/5'>
         <h1 className="text-3xl font-bold text-center col-span-full">Kategorie jedzenia</h1>
         <p className="text-lg text-center col-span-full mb-8">Odkryj różnorodne, pyszne przepisy podzielone na kategorie dla Twojej wygody. Kliknij na dowolną kategorię, aby dowiedzieć się więcej!</p>
         {categories.map((category, index) => {
           const categoryFoods = foodData.filter(food => food.category === category);
           const randomFood = categoryFoods[Math.floor(Math.random() * categoryFoods.length)];
           return (
-            <Card key={index} className="max-w-sm">
-              <img 
-                src={randomFood.photo  || '/images/blog/image-1.jpg'} 
-                alt={category} 
-                className="h-48 w-full object-cover rounded-t-lg"
-              />
+            <Card key={index} className="w-full max-w-xs m-auto">
+              <div className="relative h-48 w-full">
+                <img 
+                  src={randomFood.photo || '/images/blog/image-1.jpg'} 
+                  alt={category} 
+                  className="absolute inset-0 h-full w-full object-cover rounded-t-lg"
+                />
+              </div>
               <div className="p-4">
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {category}
@@ -120,7 +122,7 @@ export default function MainSite() {
                 </Button>
               </div>
             </Card>
-          )
+          );
         })}
       </div>
     </div>

@@ -116,6 +116,87 @@
       "ingredients": ["ingredient4", "ingredient5", "ingredient6"],
       "method": "Method of preparation 2.",
       "category": "Głodówka" 
+    },
+    {
+      "id": 2,
+      "photo": "http://localhost:3000/Images/FoodImages/Pancakes.png",
+      "name": "Naleśniki",
+      "description": "Puszyste naleśniki podawane z syropem i masłem.",
+      "ingredients": ["Mąka", "Mleko", "Jajka", "Masło", "Syrop"],
+      "method": "Wymieszaj mąkę, mleko i jajka. Smaż na patelni z masłem. Podawaj z syropem.",
+      "category": "Śniadanie"
+    },
+    {
+      "id": 3,
+      "photo": "http://localhost:3000/Images/FoodImages/Omelette.png",
+      "name": "Omlet",
+      "description": "Klasyczny omlet z serem i warzywami.",
+      "ingredients": ["Jajka", "Ser", "Warzywa", "Sól", "Pieprz"],
+      "method": "Wymieszaj jajka, dodaj ser i warzywa. Smaż na patelni do złotego koloru.",
+      "category": "Śniadanie"
+    },
+    {
+      "id": 4,
+      "photo": "http://localhost:3000/Images/FoodImages/GrilledChicken.png",
+      "name": "Grillowany Kurczak",
+      "description": "Soczysty grillowany kurczak podawany z warzywami.",
+      "ingredients": ["Kurczak", "Oliwa z oliwek", "Przyprawy", "Warzywa"],
+      "method": "Natrzyj kurczaka oliwą i przyprawami. Grilluj do miękkości. Podawaj z warzywami.",
+      "category": "Obiad"
+    },
+    {
+      "id": 5,
+      "photo": "http://localhost:3000/Images/FoodImages/SpaghettiBolognese.png",
+      "name": "Spaghetti Bolognese",
+      "description": "Klasyczne spaghetti z bogatym sosem Bolognese.",
+      "ingredients": ["Makaron", "Mięso mielone", "Pomidory", "Cebula", "Czosnek", "Przyprawy"],
+      "method": "Ugotuj makaron. Smaż mięso z cebulą i czosnkiem, dodaj pomidory i przyprawy. Podawaj z makaronem.",
+      "category": "Obiad"
+    },
+    {
+      "id": 6,
+      "photo": "http://localhost:3000/Images/FoodImages/Salad.png",
+      "name": "Sałatka",
+      "description": "Świeża mieszana sałatka z różnorodnymi warzywami.",
+      "ingredients": ["Sałata", "Pomidor", "Ogórek", "Papryka", "Sos winegret"],
+      "method": "Pokrój warzywa, wymieszaj z sałatą i sosem winegret.",
+      "category": "Kolacja"
+    },
+    {
+      "id": 7,
+      "photo": "http://localhost:3000/Images/FoodImages/Steak.png",
+      "name": "Stek",
+      "description": "Grillowany stek podawany z puree ziemniaczanym.",
+      "ingredients": ["Stek", "Oliwa z oliwek", "Przyprawy", "Ziemniaki", "Masło"],
+      "method": "Natrzyj stek oliwą i przyprawami. Grilluj do pożądanego stopnia wysmażenia. Podawaj z puree ziemniaczanym.",
+      "category": "Kolacja"
+    },
+    {
+      "id": 8,
+      "photo": "http://localhost:3000/Images/FoodImages/ChocolateCake.png",
+      "name": "Ciasto Czekoladowe",
+      "description": "Bogate i wilgotne ciasto czekoladowe.",
+      "ingredients": ["Mąka", "Cukier", "Kakao", "Jajka", "Masło", "Czekolada"],
+      "method": "Wymieszaj składniki, piecz w piekarniku przez 30 minut w 180°C.",
+      "category": "Deser"
+    },
+    {
+      "id": 9,
+      "photo": "http://localhost:3000/Images/FoodImages/IceCream.png",
+      "name": "Lody",
+      "description": "Kremowe lody waniliowe z sosem czekoladowym.",
+      "ingredients": ["Mleko", "Śmietana", "Cukier", "Wanilia", "Sos czekoladowy"],
+      "method": "Wymieszaj mleko, śmietanę, cukier i wanilię. Zamroź. Podawaj z sosem czekoladowym.",
+      "category": "Deser"
+    },
+    {
+      "id": 10,
+      "photo": "http://localhost:3000/Images/FoodImages/ApplePie.png",
+      "name": "Szarlotka",
+      "description": "Puszyste ciasto z jabłkami i cynamonem.",
+      "ingredients": ["Mąka", "Cukier", "Jajka", "Masło", "Jabłka", "Cynamon"],
+      "method": "Wymieszaj składniki, dodaj jabłka i cynamon. Piecz w piekarniku przez 40 minut w 180°C.",
+      "category": "Deser"
     }
   ]
 }
