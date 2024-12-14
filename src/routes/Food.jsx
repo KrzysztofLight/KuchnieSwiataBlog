@@ -42,7 +42,7 @@ const Food = () => {
     <div className="flex justify-center items-center pt-8 h-full">
       <div className="max-w-md w-full bg-white shadow-md rounded-lg overflow-hidden">
         <img 
-          src={foodInfo.photo || '/Images/no-image.png'} 
+          src={foodInfo.photo || 'http://localhost:3000/Images/no-image.png'} 
           alt={foodInfo.name} 
           className="w-full h-64 object-cover"
         />
