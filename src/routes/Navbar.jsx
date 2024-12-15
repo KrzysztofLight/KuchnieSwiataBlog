@@ -38,6 +38,7 @@ const NavigationBar = () => {
           <span className="text-gray-900 self-center whitespace-nowrap text-xl font-semibold dark:text-white" as={Link} to="/">Strona Główna</span>
         </Navbar.Brand>
         <Link to="/food" className='text-gray-900 self-center font-semibold dark:text-white'>Lista dań</Link>
+        <Link to="/add-food" className='text-gray-900 self-center font-semibold dark:text-white'>Dodaj przepis</Link>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Dropdown

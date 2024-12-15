@@ -39,6 +39,7 @@ export default function MainSite() {
   const [foodData, setFoodData] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     fetch('http://localhost:8000/api/food')
@@ -58,6 +59,10 @@ export default function MainSite() {
       });
   }, []);
 
+  const filteredFoodData = foodData.filter(food =>
+    food.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const categories = [...new Set(foodData.map(food => food.category))];
 
   return (
@@ -70,12 +75,31 @@ export default function MainSite() {
             className="w-4/5"
           />
         </div>
-        <div className="mx-4 w-1/3 flex justify-center">
+        <div className="relative mx-4 w-1/3 flex justify-center">
           <input
             type="text"
             placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-black dark:text-white"
           />
+          {searchQuery && (
+            <ul className="absolute top-full left-0 w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded mt-1 z-10">
+              {filteredFoodData.length > 0 ? (
+                filteredFoodData.map(food => (
+                  <li key={food.id} 
+                  className="p-2 border-b border-gray-300 dark:border-gray-600 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                  onClick={() => window.location.href = `http://localhost:3000/food/${food.name}`}
+                  >
+                    <h2 className="text-xl font-semibold">{food.name}</h2>
+                    <p>{food.description}</p>
+                  </li>
+                ))
+              ) : (
+                <li className="p-2">No food items found</li>
+              )}
+            </ul>
+          )}
         </div>
         <div className="flex flex-col items-center space-y-2">
           <h1 className="text-lg font-semibold">Check our social media</h1>

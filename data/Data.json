@@ -280,6 +280,17 @@
       ],
       "method": "Wymieszaj składniki, dodaj jabłka i cynamon. Piecz w piekarniku przez 40 minut w 180°C.",
       "category": "Deser"
+    },
+    {
+      "id": 15,
+      "name": "Lays Chilli Lime",
+      "description": "najlepsze laysy na świecie",
+      "ingredients": [
+        "Lays Chilli lime"
+      ],
+      "method": "kupujesz, jesz",
+      "category": "Kolacja",
+      "photo": "http://localhost:3000/Images/FoodImages/LaysChilliLime.png"
     }
   ]
 }

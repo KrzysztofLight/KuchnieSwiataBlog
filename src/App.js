@@ -9,6 +9,8 @@ import FoodList from './routes/FoodList';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Food from './routes/Food';
 import FoodCategory from './routes/FoodCategory';
+import AddFood from './routes/AddFood';
+
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,7 @@ function App() {
               <Route path="/food" element={<FoodList />} />
               <Route path="/food/:name" element={<Food />} />
               <Route path="/food/category/:category" element={<FoodCategory />} />
+              <Route path="/add-food" element={<AddFood />} />
             </Routes>
           </div>
         </Router>
