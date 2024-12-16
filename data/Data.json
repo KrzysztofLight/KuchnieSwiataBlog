@@ -76,6 +76,13 @@
       "email": "eeeee@eeeee",
       "password": "$2b$10$OwHVNsQG4HwgMsAKhgRmw.xgOvyCABddM...IiUy6ngq7satEvIEK",
       "isAdmin": false
+    },
+    {
+      "id": 12,
+      "name": "eeeee",
+      "email": "eeeee@eeeee",
+      "password": "$2b$10$vy2OOW8ZYSAV90S4TeXF2.c7BxLbFTO0OYsadgqxqW8BZg8XSIGae",
+      "isAdmin": false
     }
   ],
   "food": [

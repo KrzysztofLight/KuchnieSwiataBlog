@@ -24,9 +24,9 @@ const upload = multer({ storage: storage }).single('photo');
 function readData() {
   try {
     const data = fs.readFileSync(dataFilePath, 'utf8');
-    console.log('Raw data read from file:', data); // Log the raw data
+    console.log('Raw data read from file:', data);
     const parsedData = JSON.parse(data);
-    console.log('Parsed data:', parsedData); // Log the parsed data
+    console.log('Parsed data:', parsedData);
     return parsedData;
   } catch (error) {
     console.error('Error reading data from file:', error);
@@ -50,7 +50,7 @@ async function comparePassword(password, hashedPassword) {
 app.post('/api/register', async (req, res) => {
   const { name, email, password } = req.body;
   let data = readData();
-  const users = data.users; // Updated to match new structure
+  const users = data.users;
   const newId = users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 1;
   const hashedPassword = await hashPassword(password);
   const newUser = {

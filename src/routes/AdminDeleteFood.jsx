@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
-import { Card, Button } from 'flowbite-react'; // Adjust the import based on your component library
+import { Card, Button } from 'flowbite-react';
 
 function AdminDeleteFood() {
   const [foodData, setFoodData] = useState([]);
