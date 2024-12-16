@@ -146,7 +146,7 @@
     },
     {
       "id": 6,
-      "photo": "http://localhost:3000/Images/FoodImages/Pancakes.png",
+      "photo": "http://localhost:3000/Images/FoodImages/Naleśniki.png",
       "name": "Naleśniki",
       "description": "Puszyste naleśniki podawane z syropem i masłem.",
       "ingredients": [
@@ -186,22 +186,6 @@
         "Warzywa"
       ],
       "method": "Natrzyj kurczaka oliwą i przyprawami. Grilluj do miękkości. Podawaj z warzywami.",
-      "category": "Obiad"
-    },
-    {
-      "id": 9,
-      "photo": "http://localhost:3000/Images/FoodImages/SpaghettiBolognese.png",
-      "name": "Spaghetti Bolognese",
-      "description": "Klasyczne spaghetti z bogatym sosem Bolognese.",
-      "ingredients": [
-        "Makaron",
-        "Mięso mielone",
-        "Pomidory",
-        "Cebula",
-        "Czosnek",
-        "Przyprawy"
-      ],
-      "method": "Ugotuj makaron. Smaż mięso z cebulą i czosnkiem, dodaj pomidory i przyprawy. Podawaj z makaronem.",
       "category": "Obiad"
     },
     {
@@ -286,7 +270,7 @@
       "name": "Lays Chilli Lime",
       "description": "najlepsze laysy na świecie",
       "ingredients": [
-        "Lays Chilli lime"
+        "Lays Chilli Lime"
       ],
       "method": "kupujesz, jesz",
       "category": "Kolacja",

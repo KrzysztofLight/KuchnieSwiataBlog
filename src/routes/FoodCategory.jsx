@@ -36,7 +36,9 @@ const FoodCategory = () => {
   }
 
   return (
-    <div className="flex justify-center items-center pt-8 h-full">
+    
+    <div className="flex flex-col justify-center items-center pt-8 h-full">
+      <h1 className="text-4xl font-bold tracking-tight text-center text-gray-900 dark:text-white">{category}</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pt-8 w-4/5">
         {foodData.map((food, index) => (
           <Card key={index} className="w-full max-w-xs m-auto">

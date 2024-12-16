@@ -125,6 +125,26 @@ app.post('/api/food', (req, res) => {
   });
 });
 
+app.post('/api/check-admin', (req, res) => {
+  const { user } = req.body;
+  if (user && user.isAdmin) {
+    res.json({ isAdmin: true });
+  } else {
+    res.json({ isAdmin: false });
+  }
+});
+
+app.delete('/api/food/:id', (req, res) => {
+  const { id } = req.params;
+  const data = readData();
+  const foodIndex = data.food.findIndex(item => item.id === parseInt(id));
+  if (foodIndex === -1) {
+    return res.status(404).json({ message: 'Food item not found' });
+  }
+  data.food.splice(foodIndex, 1);
+  writeData(data);
+  res.status(200).json({ message: 'Food item deleted successfully' });
+});
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

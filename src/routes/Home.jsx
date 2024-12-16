@@ -116,13 +116,8 @@ export default function MainSite() {
           </div>
         </div>
       </div>
-      <div className='h-56 sm:h-64 xl:h-80 2xl:h-96 w-full'>
-        <Carousel>
-          <img src={logo} alt="Carousel 1" className="w-full" />
-          <img src={logo} alt="Carousel 2" className="w-full" />
-        </Carousel>
-      </div>
-      <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-4/5'>
+      <hr className="w-full my-8" />
+      <div className='pt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-4/5'>
         <h1 className="text-3xl font-bold text-center col-span-full">Kategorie jedzenia</h1>
         <p className="text-lg text-center col-span-full mb-8">Odkryj różnorodne, pyszne przepisy podzielone na kategorie dla Twojej wygody. Kliknij na dowolną kategorię, aby dowiedzieć się więcej!</p>
         {categories.map((category, index) => {
@@ -148,6 +143,16 @@ export default function MainSite() {
             </Card>
           );
         })}
+      </div>
+      <hr className="w-full my-8" />
+      <div className='pt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 w-4/5'>
+        <h1 className="text-3xl font-bold text-center col-span-full">Dodaj nowe jedzenie</h1>
+        <p className="text-lg text-center col-span-full mb-5">Masz przepis, którym chcesz się podzielić? Dodaj nowe jedzenie do naszej kolekcji!</p>
+        <div className="col-span-full flex justify-center">
+          <Button as={Link} to="/addFood" className='text-white p-4 rounded'>
+            Dodaj jedzenie
+          </Button>
+        </div>
       </div>
     </div>
   );

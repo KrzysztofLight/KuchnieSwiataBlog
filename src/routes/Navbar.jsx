@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Avatar, Dropdown } from 'flowbite-react';
 import { DarkThemeToggle } from 'flowbite-react';
 import { AuthContext } from '../contexts/AuthContext';
-
+ 
 function useThemeMode() {
   const [theme, setTheme] = useState('light');
   useEffect(() => {
@@ -20,16 +20,16 @@ function useThemeMode() {
   }, []);
   return theme;
 }
-
+ 
 const NavigationBar = () => {
   const theme = useThemeMode();
   const [logo, setLogo] = useState('/Images/LogoLight.png');
   const { user, logout } = useContext(AuthContext);
-
+ 
   useEffect(() => {
     setLogo(theme === 'dark' ? '/Images/LogoDark.png' : '/Images/LogoLight.png');
   }, [theme]);
-
+ 
   return (
     <>
       <Navbar fluid className='bg-slate-300 mb-1'>
@@ -37,8 +37,14 @@ const NavigationBar = () => {
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="Site Logo" />
           <span className="text-gray-900 self-center whitespace-nowrap text-xl font-semibold dark:text-white" as={Link} to="/">Strona Główna</span>
         </Navbar.Brand>
-        <Link to="/food" className='text-gray-900 self-center font-semibold dark:text-white'>Lista dań</Link>
-        <Link to="/add-food" className='text-gray-900 self-center font-semibold dark:text-white'>Dodaj przepis</Link>
+        <div className="flex justify-center gap-6 flex-1">
+          <Link to="/food" className='text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 self-center font-semibold'>
+            Lista dań
+          </Link>
+          <Link to="/add-food" className='text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 self-center font-semibold'>
+            Dodaj przepis
+          </Link>
+        </div>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Dropdown
@@ -51,7 +57,7 @@ const NavigationBar = () => {
             <Dropdown.Header>
               {user ? (
                 <div>
-                  <span>{user.name || 'No Name'}</span> 
+                  <span>{user.name || 'No Name'}</span>
                   <br></br>
                   <span>{user.email || 'No Email'}</span>
                 </div>
@@ -59,10 +65,11 @@ const NavigationBar = () => {
                 <div>Placeholder Name | Placeholder Email</div>
               )}
             </Dropdown.Header>
-            {user && user.isAdmin && <Dropdown.Item>Skibidi</Dropdown.Item>}
-            <Dropdown.Item>Dashboard</Dropdown.Item>
-            <Dropdown.Item>Settings</Dropdown.Item>
-            <Dropdown.Item>Earnings</Dropdown.Item>
+            {user && user.isAdmin && (
+              <Dropdown.Item>
+                <Link to="/admin/delete-food">Admin Delete Food</Link>
+              </Dropdown.Item>
+            )}
             <Dropdown.Divider />
             {user ? (
               <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
@@ -76,5 +83,5 @@ const NavigationBar = () => {
     </>
   );
 };
-
+ 
 export default NavigationBar;
